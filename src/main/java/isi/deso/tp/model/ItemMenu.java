@@ -1,5 +1,7 @@
 package isi.deso.tp.model;
 
+import java.util.List;
+
 public abstract class ItemMenu {
 
     protected int id;
@@ -34,7 +36,10 @@ public abstract class ItemMenu {
     public int getId() {
         return id;
     }
-
+    @Override
+    public String toString() {
+        return nombre;
+    }
     public void setId(int id) {
         this.id = id;
     }
@@ -85,6 +90,14 @@ public abstract class ItemMenu {
 
     public void setVendedor(Vendedor newVendedor) {
         this.vendedor = newVendedor;
+    }
+    
+    public ItemMenu ObtenerItem(String n, List<ItemMenu> l) {
+        for(ItemMenu i: l) {
+            if(n.equals(i.getNombre())) return i;
+        }
+        return null;
+        
     }
 
 }

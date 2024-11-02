@@ -48,5 +48,19 @@ public class ClienteMemoryDAO implements ClienteDAO {
     public void eliminarListaClientesALista(List<Cliente> listaClientes) {
         this.listaClientes.removeAll(listaClientes);
     }
+      public Cliente buscarPorNombreCliente(String idCliente) {
+        Cliente cliente = null;
+        for (Cliente c : this.listaClientes) {
+            if (c.getNombre().equals(idCliente)) {
+                cliente = c;
+            }
+        }
+        return cliente;
+    }
+    
+
+    public List<Cliente> listaCliente() {
+        return this.listaClientes;
+    }
 
 }

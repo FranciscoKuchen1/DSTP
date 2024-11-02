@@ -1,5 +1,6 @@
 package isi.deso.tp.dao;
 
+import isi.deso.tp.model.Cliente;
 import isi.deso.tp.model.ItemPedido;
 import isi.deso.tp.model.Pedido;
 import java.util.ArrayList;
@@ -46,6 +47,18 @@ public class PedidoMemoryDAO implements PedidoDAO {
         }
 
         return listaBusqueda;
+    }
+    public Pedido buscarPorNombreCliente(String cliente) {
+      
+        for (Pedido pedido : listaPedidos) {
+           if(pedido.getCliente().getNombre().equals(cliente)) {
+               return pedido;
+            }
+
+        }
+        return null;
+
+        
     }
 
     @Override

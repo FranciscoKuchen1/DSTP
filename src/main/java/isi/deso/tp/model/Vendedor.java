@@ -23,6 +23,10 @@ public class Vendedor {
         this.menu = new ArrayList<>();
     }
 
+    public Vendedor(String nombre, String direccion, Coordenada coordenada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public int getId() {
         return id;
     }
@@ -103,6 +107,14 @@ public class Vendedor {
         return this.menu.stream()
                 .filter(item -> item.esBebida() && !(item instanceof BebidaAlcoholica))
                 .toList();
+    }
+     public List<String> getItems() {
+         List<String> l=new ArrayList<>();
+        for(ItemMenu i:menu) {
+            l.add(i.getNombre());
+            
+        }
+        return l;
     }
 
     @Override

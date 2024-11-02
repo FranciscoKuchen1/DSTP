@@ -8,6 +8,7 @@ import isi.deso.tp.service.GestorCliente;
 import isi.deso.tp.service.GestorItemPedido;
 import isi.deso.tp.service.GestorPedido;
 import isi.deso.tp.service.GestorVendedor;
+import isi.deso.tp.ui.Inicio;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,6 +128,14 @@ public class Main {
         }
 
         System.out.println("\nFIN App TP Etapa 5");
+        //
+        // --------------------------------
+        //
+        
+        Inicio i=new Inicio();
+        i.setVisible(true);
+        
+        
 
     }
 
